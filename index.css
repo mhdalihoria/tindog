@@ -1,0 +1,83 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+a .icon-chat {
+    display: block;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 90%;
+    margin: auto;
+}
+
+
+.icon-chat, .icon-profile, .logo {
+    width: 60%; 
+    height: auto;
+    padding: 0;
+    display: block;
+}
+
+.icon-profile {
+ 
+}
+
+.logo {
+
+}
+
+.icon-chat {
+
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    margin: 1% auto;
+}
+
+#card .dog-img {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    border-radius: 10px;;
+}
+
+#card {
+    position: relative;
+    width: 100%;
+}
+
+.badge {
+    /* Dimensions */
+    max-width: 20%;
+    height: auto;
+    /* Positioning */
+    position: absolute;
+    z-index: 0;
+    top: 5%;
+    left: 20;
+    /*  Animations and edits */
+    transform: rotate(-30deg);
+    animation: fadeIn 1s;
+    @keyframes fadeIn {
+        0%: {opacity: 0;}
+        25%: {opacity: .25}
+        50%: {opacity: .5}
+        75%: {opacity: .75}
+        100%: {opacity: 1;}
+    }
+}
+
+.dog-info {
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    left: 10px;
+}
+
+
