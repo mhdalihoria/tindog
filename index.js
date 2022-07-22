@@ -4,6 +4,7 @@ let currentDogIndex = 0
 let currentDog = new Dog(dogsData[currentDogIndex])
 document.getElementById("accept-button").addEventListener('click', yes)
 document.getElementById("reject-button").addEventListener('click', no)
+let isClicked = false
 
 render()
 
@@ -12,6 +13,8 @@ function render() {
 }
 
 function getNewDog() {
+
+    isClicked = false
     if(currentDogIndex >= 2){
         currentDogIndex=0
 
@@ -25,19 +28,27 @@ function getNewDog() {
 
 // Functions to pass the boolean into the "currentDog" obj in case of rejection or acceptance and gets a new dog after
 function yes() {
-    currentDog.setMatchStatus(true)
-    
-    setTimeout(()=>{
-        return getNewDog()
-    }, 1000 )
+    if(!isClicked) {
+        currentDog.setMatchStatus(true)
+        document.querySelector('.like').classList.remove('hideBadge')
+        setTimeout(()=>{
+            document.querySelector('.like').classList.add('hideBadge')
+            return getNewDog()
+        }, 1000 )
+
+        isClicked = true
+    }
     
 }
 
 function no() {
-    currentDog.setMatchStatus(false)
-
-    console.log("this doggie has been disliked")
-    setTimeout(()=>{
-        return getNewDog()
-    }, 1000 )
+    if(!isClicked) {
+        currentDog.setMatchStatus(false)
+        document.querySelector('.nope').classList.remove('hideBadge')
+        setTimeout(()=>{
+            document.querySelector('.nope').classList.add('hideBadge')
+            return getNewDog()
+        }, 1000 )
+    }
+    isClicked = true
 }

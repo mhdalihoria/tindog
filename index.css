@@ -1,37 +1,30 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-around;
 }
+
+h4 {
+    margin-bottom: 7px;
+}
+
 a .icon-chat {
     display: block;
+    padding: 0;
+    margin: 0;
 }
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: .5rem 0 .3rem 0;
     width: 90%;
     margin: auto;
 }
 
 
 .icon-chat, .icon-profile, .logo {
-    width: 60%; 
-    height: auto;
-    padding: 0;
-    display: block;
-}
-
-.icon-profile {
- 
-}
-
-.logo {
-
-}
-
-.icon-chat {
-
+    height: 75px; 
+    width: auto;
 }
 
 .container {
@@ -44,7 +37,8 @@ a .icon-chat {
     position: relative;
     width: 100%;
     z-index: -1;
-    border-radius: 10px;;
+    border-radius: 5px;
+    padding: .5rem;
 }
 
 #card {
@@ -52,32 +46,92 @@ a .icon-chat {
     width: 100%;
 }
 
-.badge {
+.like, .nope {
     /* Dimensions */
-    max-width: 20%;
+    max-width: 30%;
     height: auto;
     /* Positioning */
     position: absolute;
     z-index: 0;
-    top: 5%;
-    left: 20;
-    /*  Animations and edits */
+    top: 110;
+    left: 30;
+    /*  Tilting the text*/
     transform: rotate(-30deg);
-    animation: fadeIn 1s;
-    @keyframes fadeIn {
-        0%: {opacity: 0;}
-        25%: {opacity: .25}
-        50%: {opacity: .5}
-        75%: {opacity: .75}
-        100%: {opacity: 1;}
-    }
+   
+  
 }
+
+
+
+.hideBadge {
+    display: none;
+}
+
 
 .dog-info {
     position: absolute;
     color: white;
     bottom: 10px;
     left: 10px;
+    font-size: 2rem;
+    padding: 0 0 3rem 2.3rem;
+}
+
+.actions { 
+    display: flex;
+    justify-content: center;
+}
+
+#accept-button, #reject-button{ 
+    width: 90px;
+    height: 90px;
+    border-radius: 100px;
+    margin-top: 1.5rem;
+    box-shadow: 0px 10px 20px #E9E9EA;
+    border: none
+}
+#reject-button{ 
+    margin-right: 1rem;
+}
+#accept-button{ 
+    margin-left: 1rem;
+}
+
+#accept-button:hover {
+    background: #DBFFF4;
+}
+
+#accept-button:active {
+    background: #C3F4E4;
+}
+
+#reject-button:hover {
+    background: #EDD9DF;
+}
+#reject-button:active {
+    background: #E5BECB;
 }
 
 
+@media screen and (max-width: 600px) {
+    
+    .icon-chat, .icon-profile, .logo {
+        height: 45px; 
+        width: auto;
+    }
+
+    .like, .nope {
+        top: 60;
+    }
+
+    .dog-info {
+        font-size: 1.2rem;
+    }
+
+    #card .dog-img {
+        width: 96%;
+        margin: auto;
+        padding: .6rem;
+       
+    }
+}

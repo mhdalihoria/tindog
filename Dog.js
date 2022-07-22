@@ -1,5 +1,3 @@
-// Create the Dog class here
-
 class Dog {
     constructor(data) {
         Object.assign(this, data)
@@ -8,12 +6,6 @@ class Dog {
     setMatchStatus(bool) {
         this.hasBeenLiked = bool
         this.hasBeenSwiped = true
-
-        if(this.hasBeenLiked){
-            document.getElementById('main').innerHTML += `<img src="/images/badge-like.png" class="badge"/>`
-        }else {
-            document.getElementById('main').innerHTML += `<img src="/images/badge-nope.png" class="badge"/>`
-        }
     }
     
     getDogHtml() {
